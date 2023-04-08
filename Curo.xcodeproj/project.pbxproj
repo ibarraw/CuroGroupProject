@@ -19,6 +19,8 @@
 		34067FAE29DFB7A000EA7BC9 /* StartTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34067FAD29DFB7A000EA7BC9 /* StartTimerViewController.swift */; };
 		34067FB129DFB7BA00EA7BC9 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34067FB029DFB7BA00EA7BC9 /* TimerViewController.swift */; };
 		34067FB329DFE49400EA7BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34067FB229DFE49400EA7BC9 /* Assets.xcassets */; };
+		34067FB529E10BB800EA7BC9 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34067FB429E10BB800EA7BC9 /* Task.swift */; };
+		34067FB729E147E100EA7BC9 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34067FB629E147E100EA7BC9 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		34067FAD29DFB7A000EA7BC9 /* StartTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTimerViewController.swift; sourceTree = "<group>"; };
 		34067FB029DFB7BA00EA7BC9 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		34067FB229DFE49400EA7BC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34067FB429E10BB800EA7BC9 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		34067FB629E147E100EA7BC9 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 			children = (
 				34067F3229DDB51F00EA7BC9 /* SceneDelegate.swift */,
 				34067F3029DDB51F00EA7BC9 /* AppDelegate.swift */,
+				34067FB429E10BB800EA7BC9 /* Task.swift */,
+				34067FB629E147E100EA7BC9 /* TaskTableViewCell.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -182,6 +188,8 @@
 			files = (
 				34067FAA29DFB78000EA7BC9 /* MoreInformationViewController.swift in Sources */,
 				34067FB129DFB7BA00EA7BC9 /* TimerViewController.swift in Sources */,
+				34067FB729E147E100EA7BC9 /* TaskTableViewCell.swift in Sources */,
+				34067FB529E10BB800EA7BC9 /* Task.swift in Sources */,
 				34067F3529DDB51F00EA7BC9 /* ViewController.swift in Sources */,
 				34067F3129DDB51F00EA7BC9 /* AppDelegate.swift in Sources */,
 				34067FA829DFB76F00EA7BC9 /* TasksViewController.swift in Sources */,
