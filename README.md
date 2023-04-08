@@ -1,0 +1,2 @@
+# Curo
+Group iOS project
