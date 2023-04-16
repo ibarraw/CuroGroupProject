@@ -7,13 +7,36 @@
 
 import UIKit
 
-class StartTimerViewController: UIViewController {
+class StartTimerViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var roundedCancelButton: UIButton!
-    @IBOutlet weak var roundedStartButton: UIButton!
+    @IBOutlet var roundedCancelButton: UIButton!
+    @IBOutlet var roundedStartButton: UIButton!
+    
+    @IBOutlet var timePicker: UIDatePicker!
+    
+    @IBOutlet var tfTaskName: UITextField!
+    
+    var selectedTime: TimeInterval = 0.0
+    
+    
+    
+    @IBAction func buttonPressed(sender: Any){
+        selectedTime = timePicker.countDownDuration
+        performSegue(withIdentifier: "goTimerViewController", sender: self)
+    }
+    
+    override func prepare(for segue:UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "goTimerViewController" {
+            if let timeViewController = segue.destination as? TimerViewController {
+                timeViewController.selectedTime = selectedTime
+                timeViewController.taskName = tfTaskName.text
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Do any additional setup after loading the view.
         
@@ -24,6 +47,15 @@ class StartTimerViewController: UIViewController {
         roundedCancelButton.layer.cornerRadius = roundedCancelButton.frame.width / 2
         roundedCancelButton.layer.masksToBounds = true
     }
+//
+//    @IBAction func startButtonPressed(sender: Any){
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                guard let timerViewController = storyboard.instantiateViewController(withIdentifier: "TimerViewController") as? TimerViewController else { return }
+//                timerViewController.selectedDate = timePicker.date
+//                present(timerViewController, animated: true, completion: nil)
+//    }
+    
+ 
     
 
     /*
