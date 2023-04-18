@@ -20,7 +20,7 @@ Build and run Project on iPhone 13 Pro
 2. Open Curo.xcworkspace
 3. Build and Run
 
-#Troubleshooting
+## Troubleshooting
 
 If you receive an error that states: "Signing for 'Curo' requires a development team. Select a development team in the Signing & Capabilities editor".
 
