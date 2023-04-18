@@ -6,12 +6,12 @@ Install Cocoa Pods
 2. run: pod init
 3. open newly created Podfile in text editor
 4. copy and paste the following between "# Pods for Curo" and "end"
-
+```
 pod 'FirebaseAnalytics'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'Firebase/Core'
-
+```
 5. save and close Podfile
 6. return to terminal and run: pod install
  
@@ -28,7 +28,7 @@ Then perform the following:
 
 1. Update Podfile (file created at step 2 after 'pod init') with the following appended AFTER the pod package declartion from step #4: 
 *Note, a new clone may be needed the first time this is ran to clear previous errors*
-
+```
 post_install do |installer|
   installer.generated_projects.each do |project|
     project.targets.each do |target|
@@ -38,4 +38,4 @@ post_install do |installer|
     end
   end
 end
-
+```
