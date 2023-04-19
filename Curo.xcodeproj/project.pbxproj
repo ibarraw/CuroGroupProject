@@ -34,6 +34,7 @@
 		70EFDAC929EFCA2000FADA83 /* ResumeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAC529EFCA1F00FADA83 /* ResumeButton.png */; };
 		70EFDACA29EFCA2000FADA83 /* CancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAC629EFCA1F00FADA83 /* CancelButton.png */; };
 		70EFDACB29EFCA2000FADA83 /* PauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAC729EFCA2000FADA83 /* PauseButton.png */; };
+		952F266029F0773100B049C0 /* CuroDatabase.sql in Resources */ = {isa = PBXBuildFile; fileRef = 952F265F29F0773100B049C0 /* CuroDatabase.sql */; };
 		953D364D29E61777005F494E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953D364C29E61777005F494E /* GoogleService-Info.plist */; };
 		9569B74129E651C500D5B8AE /* curoBg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9569B74029E651C500D5B8AE /* curoBg.mp4 */; };
 		95D6C47729E602CF00BA2334 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6C47629E602CF00BA2334 /* SignUpViewController.swift */; };
@@ -72,6 +73,7 @@
 		70EFDAC729EFCA2000FADA83 /* PauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseButton.png; sourceTree = "<group>"; };
 		70EFDACC29EFD5AF00FADA83 /* Curo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Curo.entitlements; sourceTree = "<group>"; };
 		8F244E55860299921B130204 /* Pods-Curo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curo.debug.xcconfig"; path = "Target Support Files/Pods-Curo/Pods-Curo.debug.xcconfig"; sourceTree = "<group>"; };
+		952F265F29F0773100B049C0 /* CuroDatabase.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = CuroDatabase.sql; sourceTree = "<group>"; };
 		953D364C29E61777005F494E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9569B74029E651C500D5B8AE /* curoBg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = curoBg.mp4; sourceTree = "<group>"; };
 		95D6C47629E602CF00BA2334 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		34067F2F29DDB51F00EA7BC9 /* Curo */ = {
 			isa = PBXGroup;
 			children = (
+				952F265E29F0768200B049C0 /* Database  */,
 				70EFDACC29EFD5AF00FADA83 /* Curo.entitlements */,
 				9569B73F29E6506300D5B8AE /* Media */,
 				34067FA429DFB6E000EA7BC9 /* Storyboards */,
@@ -171,6 +174,14 @@
 				34067F3B29DDB52100EA7BC9 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		952F265E29F0768200B049C0 /* Database  */ = {
+			isa = PBXGroup;
+			children = (
+				952F265F29F0773100B049C0 /* CuroDatabase.sql */,
+			);
+			path = "Database ";
 			sourceTree = "<group>";
 		};
 		9569B73F29E6506300D5B8AE /* Media */ = {
@@ -271,6 +282,7 @@
 				70EFDAC029EF5B9700FADA83 /* In Class Exercise.png in Resources */,
 				70EFDAC829EFCA2000FADA83 /* StartButton.png in Resources */,
 				70EFDABD29EF4BF500FADA83 /* Assginments.png in Resources */,
+				952F266029F0773100B049C0 /* CuroDatabase.sql in Resources */,
 				34067F3829DDB51F00EA7BC9 /* Main.storyboard in Resources */,
 				70EFDACB29EFCA2000FADA83 /* PauseButton.png in Resources */,
 				70EFDAB329EF2DB100FADA83 /* Progressbg.png in Resources */,
