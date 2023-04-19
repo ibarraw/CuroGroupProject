@@ -9,6 +9,9 @@ import UIKit
 
 class DashboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var lblToday : UILabel!
+    @IBOutlet var lblName : UILabel!
+    
     @IBOutlet var progressView : UIProgressView!
     @IBOutlet var assignBtn : UIButton!
     @IBOutlet var quizbtn : UIButton!
@@ -16,9 +19,12 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet var exerciseBtn : UIButton!
     @IBOutlet var examBtn : UIButton!
     
+    
+    
     @IBOutlet weak var taskTableView: UITableView!
     
     var listData : Array<String> = []
+    var firstName: String?
     
     @IBAction func assignButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "createTaskSegue", sender: 0)
@@ -51,6 +57,7 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblName.text = firstName
         
         var transform : CGAffineTransform = CGAffineTransform(scaleX: 1.2, y: 4.5)
         progressView.transform = transform
@@ -58,6 +65,17 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         progressView.layer.masksToBounds = true
         
         listData = ["Chapter1", "Chapter2", "Chapter3"]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd"
+        let today = Date()
+        let formattedDate = dateFormatter.string(from: today)
+        lblToday.text = formattedDate
+        
+        // Format Table Cell View
+        taskTableView.separatorStyle = .none
+        
+        
         
 
         // Do any additional setup after loading the view.
@@ -80,6 +98,8 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         let rowNum = indexPath.row
         
         tableCell.lblTaskTitle.text = listData[rowNum]
+        
+        tableCell.taskView.layer.cornerRadius = tableCell.taskView.frame.height / 4
         
         return tableCell
     }

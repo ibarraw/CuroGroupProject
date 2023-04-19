@@ -7,6 +7,7 @@
 
 import UIKit
 import UserNotifications
+import AVFAudio
 
 
 class TimerViewController: UIViewController {
@@ -17,6 +18,7 @@ class TimerViewController: UIViewController {
     @IBOutlet var taskNameLabel: UILabel!
     
     
+    var notificationCenter = UNUserNotificationCenter.current()
     var countdownTime: Date?
     
     var selectedTime: TimeInterval = 0.0
@@ -30,15 +32,27 @@ class TimerViewController: UIViewController {
             //resume the timer
             timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
             isPaused = false
-            pauseButton.setTitle("Pause", for: .normal)
+            pauseButton.setImage(UIImage(named: "PauseButton.png"), for: .normal)
+            
             
         } else{
             //pause the timer
             timer.invalidate()
             isPaused = true
-            pauseButton.setTitle("Resume", for: .normal)
+            pauseButton.setImage(UIImage(named: "ResumeButton.png"), for: .normal)
         }
     }
+    
+    @IBAction func cancelButtonPressed(sender: Any){
+        timeLabel.text = "00:00"
+        timer.invalidate()
+        print("Cancel button pressed")
+    }
+    
+    @IBAction func unwindToStartTimerController(segue: UIStoryboardSegue){
+        
+    }
+    
     
     
     
@@ -69,7 +83,7 @@ class TimerViewController: UIViewController {
         view.layer.addSublayer(timeLeftShapeLayer)
     }
     func addTimeLabel() {
-        timeLabel = UILabel(frame: CGRect(x: view.frame.midX-50 ,y: view.frame.midY - 100, width: 100, height: 50))
+        timeLabel = UILabel(frame: CGRect(x: view.frame.midX-50 ,y: view.frame.midY - 180, width: 100, height: 50))
         timeLabel.textAlignment = .center
         timeLabel.text = formattedTimeString(timeInterval: selectedTime)
         timeLabel.font = timeLabel.font.withSize(30)
@@ -104,7 +118,7 @@ class TimerViewController: UIViewController {
             case .denied:
                 return
             case .notDetermined:
-                notificationCenter.requestAuthorization(options: [.alert, .sound]) { didAllow, error in
+                notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { didAllow, error in
                     if didAllow {
                         self.dispatchNotification()
                     }
@@ -119,9 +133,8 @@ class TimerViewController: UIViewController {
         let identifier = "Timer Notification"
         let title = "Time is Up!"
         let body = "Your time is up!"
-        let hour = 12
-        let minute = 15
-        let isDaily = true
+        let hour = 13
+        let minute = 01
         
         let notificationCenter = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
@@ -134,10 +147,11 @@ class TimerViewController: UIViewController {
         dateComponents.hour = hour
         dateComponents.minute = minute
         
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: isDaily)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+        notificationCenter.add(request)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -169,6 +183,11 @@ class TimerViewController: UIViewController {
         // define the future end time by adding the timeLeft to now Date()
         endTime = Date().addingTimeInterval(selectedTime)
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if let error = error {
+                print("Error requesting authorization for push notifications: \(error.localizedDescription)")
+            }
+        }
         
         
         
@@ -182,7 +201,6 @@ class TimerViewController: UIViewController {
         } else {
         timeLabel.text = "00:00"
         timer.invalidate()
-            sendPushNotification()
         }
     }
 }
