@@ -22,6 +22,15 @@
 		34067FB329DFE49400EA7BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34067FB229DFE49400EA7BC9 /* Assets.xcassets */; };
 		34067FB529E10BB800EA7BC9 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34067FB429E10BB800EA7BC9 /* Task.swift */; };
 		34067FB729E147E100EA7BC9 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34067FB629E147E100EA7BC9 /* TaskTableViewCell.swift */; };
+		70EFDAB329EF2DB100FADA83 /* Progressbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAB229EF2DB100FADA83 /* Progressbg.png */; };
+		70EFDAB529EF3E0900FADA83 /* Progress Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAB429EF3E0900FADA83 /* Progress Bar.png */; };
+		70EFDAB729EF48C900FADA83 /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFDAB629EF48C900FADA83 /* TaskType.swift */; };
+		70EFDABB29EF4BF500FADA83 /* Test.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAB829EF4BF500FADA83 /* Test.png */; };
+		70EFDABC29EF4BF500FADA83 /* Quiz.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAB929EF4BF500FADA83 /* Quiz.png */; };
+		70EFDABD29EF4BF500FADA83 /* Assginments.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDABA29EF4BF500FADA83 /* Assginments.png */; };
+		70EFDAC029EF5B9700FADA83 /* In Class Exercise.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDABE29EF5B9700FADA83 /* In Class Exercise.png */; };
+		70EFDAC129EF5B9700FADA83 /* Exam.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDABF29EF5B9700FADA83 /* Exam.png */; };
+		70EFDAC329EF673500FADA83 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFDAC229EF673500FADA83 /* TaskCell.swift */; };
 		953D364D29E61777005F494E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953D364C29E61777005F494E /* GoogleService-Info.plist */; };
 		9569B74129E651C500D5B8AE /* curoBg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9569B74029E651C500D5B8AE /* curoBg.mp4 */; };
 		95D6C47729E602CF00BA2334 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6C47629E602CF00BA2334 /* SignUpViewController.swift */; };
@@ -46,6 +55,15 @@
 		34067FB229DFE49400EA7BC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34067FB429E10BB800EA7BC9 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		34067FB629E147E100EA7BC9 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		70EFDAB229EF2DB100FADA83 /* Progressbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progressbg.png; sourceTree = "<group>"; };
+		70EFDAB429EF3E0900FADA83 /* Progress Bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Progress Bar.png"; sourceTree = "<group>"; };
+		70EFDAB629EF48C900FADA83 /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
+		70EFDAB829EF4BF500FADA83 /* Test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Test.png; sourceTree = "<group>"; };
+		70EFDAB929EF4BF500FADA83 /* Quiz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quiz.png; sourceTree = "<group>"; };
+		70EFDABA29EF4BF500FADA83 /* Assginments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assginments.png; sourceTree = "<group>"; };
+		70EFDABE29EF5B9700FADA83 /* In Class Exercise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "In Class Exercise.png"; sourceTree = "<group>"; };
+		70EFDABF29EF5B9700FADA83 /* Exam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Exam.png; sourceTree = "<group>"; };
+		70EFDAC229EF673500FADA83 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		8F244E55860299921B130204 /* Pods-Curo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curo.debug.xcconfig"; path = "Target Support Files/Pods-Curo/Pods-Curo.debug.xcconfig"; sourceTree = "<group>"; };
 		953D364C29E61777005F494E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9569B74029E651C500D5B8AE /* curoBg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = curoBg.mp4; sourceTree = "<group>"; };
@@ -116,6 +134,8 @@
 				34067F3029DDB51F00EA7BC9 /* AppDelegate.swift */,
 				34067FB429E10BB800EA7BC9 /* Task.swift */,
 				34067FB629E147E100EA7BC9 /* TaskTableViewCell.swift */,
+				70EFDAB629EF48C900FADA83 /* TaskType.swift */,
+				70EFDAC229EF673500FADA83 /* TaskCell.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -149,6 +169,13 @@
 		9569B73F29E6506300D5B8AE /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				70EFDABF29EF5B9700FADA83 /* Exam.png */,
+				70EFDABE29EF5B9700FADA83 /* In Class Exercise.png */,
+				70EFDABA29EF4BF500FADA83 /* Assginments.png */,
+				70EFDAB929EF4BF500FADA83 /* Quiz.png */,
+				70EFDAB829EF4BF500FADA83 /* Test.png */,
+				70EFDAB429EF3E0900FADA83 /* Progress Bar.png */,
+				70EFDAB229EF2DB100FADA83 /* Progressbg.png */,
 				9569B74029E651C500D5B8AE /* curoBg.mp4 */,
 			);
 			path = Media;
@@ -222,11 +249,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70EFDABC29EF4BF500FADA83 /* Quiz.png in Resources */,
 				34067F3D29DDB52100EA7BC9 /* LaunchScreen.storyboard in Resources */,
 				953D364D29E61777005F494E /* GoogleService-Info.plist in Resources */,
 				34067FB329DFE49400EA7BC9 /* Assets.xcassets in Resources */,
+				70EFDABB29EF4BF500FADA83 /* Test.png in Resources */,
 				9569B74129E651C500D5B8AE /* curoBg.mp4 in Resources */,
+				70EFDAC129EF5B9700FADA83 /* Exam.png in Resources */,
+				70EFDAC029EF5B9700FADA83 /* In Class Exercise.png in Resources */,
+				70EFDABD29EF4BF500FADA83 /* Assginments.png in Resources */,
 				34067F3829DDB51F00EA7BC9 /* Main.storyboard in Resources */,
+				70EFDAB329EF2DB100FADA83 /* Progressbg.png in Resources */,
+				70EFDAB529EF3E0900FADA83 /* Progress Bar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,10 +320,12 @@
 				34067F3529DDB51F00EA7BC9 /* ViewController.swift in Sources */,
 				95D6C47B29E6116D00BA2334 /* LaunchViewController.swift in Sources */,
 				34067F3129DDB51F00EA7BC9 /* AppDelegate.swift in Sources */,
+				70EFDAB729EF48C900FADA83 /* TaskType.swift in Sources */,
 				95D6C47729E602CF00BA2334 /* SignUpViewController.swift in Sources */,
 				34067FA829DFB76F00EA7BC9 /* TasksViewController.swift in Sources */,
 				34067F3329DDB51F00EA7BC9 /* SceneDelegate.swift in Sources */,
 				34067FA629DFB75600EA7BC9 /* DashboardViewController.swift in Sources */,
+				70EFDAC329EF673500FADA83 /* TaskCell.swift in Sources */,
 				34067FAC29DFB79400EA7BC9 /* CreateTaskViewController.swift in Sources */,
 				95D6C47929E602DD00BA2334 /* LoginViewController.swift in Sources */,
 				34067FAE29DFB7A000EA7BC9 /* StartTimerViewController.swift in Sources */,
