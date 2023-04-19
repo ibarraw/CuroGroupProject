@@ -58,7 +58,7 @@ class TimerViewController: UIViewController {
     var endTime: Date?
     var timeLabel =  UILabel()
     var timer = Timer()
-    // here you create your basic animation object to animate the strokeEnd
+    // here you create basic animation object to animate the strokeEnd
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
     func drawBgShape() {
         bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY - 130), radius:
@@ -92,16 +92,6 @@ class TimerViewController: UIViewController {
         formatter.zeroFormattingBehavior = .pad
         return formatter.string(from: timeInterval)!
     }
-    
-    
-
-    func sendPushNotification(){
-        let content = UNMutableNotificationContent()
-        content.title = "Timer Complete"
-        content.body = "Your timer has finished"
-        content.sound = UNNotificationSound.default
-    }
-    
     
     func checkForPermission(){
         let notificationCenter = UNUserNotificationCenter.current()
@@ -171,8 +161,6 @@ class TimerViewController: UIViewController {
                 print("Error requesting authorization for push notifications: \(error.localizedDescription)")
             }
         }
-        
-        
         
         }
     
