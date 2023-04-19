@@ -10,10 +10,44 @@ import UIKit
 class DashboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var progressView : UIProgressView!
+    @IBOutlet var assignBtn : UIButton!
+    @IBOutlet var quizbtn : UIButton!
+    @IBOutlet var testbtn : UIButton!
+    @IBOutlet var exerciseBtn : UIButton!
+    @IBOutlet var examBtn : UIButton!
+    
+    @IBOutlet weak var taskTableView: UITableView!
     
     var listData : Array<String> = []
     
+    @IBAction func assignButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "createTaskSegue", sender: 0)
+    }
+
+    @IBAction func quizButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "createTaskSegue", sender: 1)
+    }
     
+    @IBAction func testButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "createTaskSegue", sender: 2)
+    }
+
+    @IBAction func exerciseButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "createTaskSegue", sender: 3)
+    }
+
+    @IBAction func examButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "createTaskSegue", sender: 4)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createTaskSegue" {
+            let selectedIndex = sender as? Int ?? 0
+            if let createTaskVC = segue.destination as? CreateTaskViewController {
+                createTaskVC.selectedButtonIndex = selectedIndex
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +73,14 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell()
-        let rowNum = indexPath.row
-        tableCell.textLabel?.text = listData[rowNum]
+        let tableCell = taskTableView.dequeueReusableCell(withIdentifier: "taskCell") as! TaskCell
+//        let rowNum = indexPath.row
+//        tableCell.textLabel?.text = listData[rowNum]
         
-        tableCell.textLabel?.font = UIFont.systemFont(ofSize: 50, weight: .bold)
-        tableCell.accessoryType = .disclosureIndicator
+        let rowNum = indexPath.row
+        
+        tableCell.lblTaskTitle.text = listData[rowNum]
+        
         return tableCell
     }
     

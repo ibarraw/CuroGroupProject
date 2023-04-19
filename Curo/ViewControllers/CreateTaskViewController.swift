@@ -25,6 +25,7 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     let typePicker = UIPickerView()
     let taskTypes = ["Assignment", "Quiz", "Test", "In-class Exercise", "Exam"]
+    var selectedButtonIndex: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,10 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
         typeTextField.delegate = self
         typeTextField.inputView = typePicker
         typeTextField.inputAccessoryView = createPickerToolbar()
+        
+        if let selectedIndex = selectedButtonIndex{
+            typeTextField.text = taskTypes[selectedIndex]
+        }
         
     }
     

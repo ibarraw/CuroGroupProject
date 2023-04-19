@@ -17,4 +17,14 @@ class Task {
         self.courseHomepage = courseHomepage
         self.comments = comments
     }
+    
+    init(name: String, course: String, dueDate: Date) {
+        self.name = name
+        self.course = course
+        self.dueDate = dueDate
+        self.type = ""
+        self.courseHomepage = ""
+        self.comments = ""
+        
+    }
 }
