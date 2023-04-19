@@ -2,12 +2,11 @@
 //  TimerViewController.swift
 //  Curo
 //
-//  Created by  on 2023-04-06.
+//  Created by Hajra Rizvi on 2023-04-06.
 //
 
 import UIKit
 import UserNotifications
-import AVFAudio
 
 
 class TimerViewController: UIViewController {
@@ -23,7 +22,6 @@ class TimerViewController: UIViewController {
     
     var selectedTime: TimeInterval = 0.0
     var isPaused = false
-    var intervals: Int = 2 // number of intervals
 
     var taskName: String?
     
@@ -52,11 +50,6 @@ class TimerViewController: UIViewController {
     @IBAction func unwindToStartTimerController(segue: UIStoryboardSegue){
         
     }
-    
-    
-    
-    
-    
     
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
@@ -156,29 +149,18 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkForPermission()
-        
-//        let timeInterval = countdownTime?.timeIntervalSinceNow
-//        if timeInterval! > 0.0 {
-//            selectedTime = timeInterval!
-//            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-//                self.selectedTime -= 1.0
-//                if self.selectedTime <= 0 {
-//                    timer.invalidate()
-//                }
-//            }
-//        }
-//        countdownLabel.text = formattedTimeString(timeInterval: selectedTime)
+
         taskNameLabel.text = taskName
     
         view.backgroundColor = UIColor(white: 0.94, alpha: 1.0)
         drawBgShape()
         drawTimeLeftShape()
         addTimeLabel()
-        // here you define the fromValue, toValue and duration of your animation
+        //  define the fromValue, toValue and duration of your animation
         strokeIt.fromValue = 0
         strokeIt.toValue = 1
         strokeIt.duration = 60
-        // add the animation to your timeLeftShapeLayer
+        // add the animation to timeLeftShapeLayer
         timeLeftShapeLayer.add(strokeIt, forKey: nil)
         // define the future end time by adding the timeLeft to now Date()
         endTime = Date().addingTimeInterval(selectedTime)
