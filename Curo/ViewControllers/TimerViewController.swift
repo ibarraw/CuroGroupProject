@@ -24,6 +24,7 @@ class TimerViewController: UIViewController {
     var isPaused = false
 
     var taskName: String?
+    var timerData: TimerData?
     
     @IBAction func pausedButtonTapped(sender: UIButton){
         if isPaused{

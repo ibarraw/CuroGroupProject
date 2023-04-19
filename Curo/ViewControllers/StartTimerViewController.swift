@@ -18,6 +18,13 @@ class StartTimerViewController: UIViewController, UITextFieldDelegate {
     
     var selectedTime: TimeInterval = 0.0
     
+//    var timerData : TimerData
+//
+//    func doTheUpdate(){
+//        let time = timePicker.countDownDuration
+//        let name = tfTaskName.text ?? ""
+//        let timerData = TimerData(selectTime: time, task: name)
+//    }
     
     
     @IBAction func buttonPressed(sender: Any){
@@ -28,6 +35,7 @@ class StartTimerViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue:UIStoryboardSegue, sender: Any?){
         if segue.identifier == "goTimerViewController" {
             if let timeViewController = segue.destination as? TimerViewController {
+//                timeViewController.timerData = timerData
                 timeViewController.selectedTime = selectedTime
                 timeViewController.taskName = tfTaskName.text
             }

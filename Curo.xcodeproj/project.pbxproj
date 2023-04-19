@@ -34,6 +34,7 @@
 		70EFDAC929EFCA2000FADA83 /* ResumeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAC529EFCA1F00FADA83 /* ResumeButton.png */; };
 		70EFDACA29EFCA2000FADA83 /* CancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAC629EFCA1F00FADA83 /* CancelButton.png */; };
 		70EFDACB29EFCA2000FADA83 /* PauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAC729EFCA2000FADA83 /* PauseButton.png */; };
+		70EFDAD229F0929500FADA83 /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EFDAD129F0929500FADA83 /* TimerData.swift */; };
 		952F266029F0773100B049C0 /* CuroDatabase.sql in Resources */ = {isa = PBXBuildFile; fileRef = 952F265F29F0773100B049C0 /* CuroDatabase.sql */; };
 		952F266229F07E8900B049C0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F266129F07E8900B049C0 /* Data.swift */; };
 		953D364D29E61777005F494E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953D364C29E61777005F494E /* GoogleService-Info.plist */; };
@@ -73,6 +74,7 @@
 		70EFDAC629EFCA1F00FADA83 /* CancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CancelButton.png; sourceTree = "<group>"; };
 		70EFDAC729EFCA2000FADA83 /* PauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseButton.png; sourceTree = "<group>"; };
 		70EFDACC29EFD5AF00FADA83 /* Curo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Curo.entitlements; sourceTree = "<group>"; };
+		70EFDAD129F0929500FADA83 /* TimerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
 		8F244E55860299921B130204 /* Pods-Curo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curo.debug.xcconfig"; path = "Target Support Files/Pods-Curo/Pods-Curo.debug.xcconfig"; sourceTree = "<group>"; };
 		952F265F29F0773100B049C0 /* CuroDatabase.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = CuroDatabase.sql; sourceTree = "<group>"; };
 		952F266129F07E8900B049C0 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				34067FB629E147E100EA7BC9 /* TaskTableViewCell.swift */,
 				70EFDAC229EF673500FADA83 /* TaskCell.swift */,
 				952F266129F07E8900B049C0 /* Data.swift */,
+				70EFDAD129F0929500FADA83 /* TimerData.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				95D6C47929E602DD00BA2334 /* LoginViewController.swift in Sources */,
 				34067FAE29DFB7A000EA7BC9 /* StartTimerViewController.swift in Sources */,
 				952F266229F07E8900B049C0 /* Data.swift in Sources */,
+				70EFDAD229F0929500FADA83 /* TimerData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
