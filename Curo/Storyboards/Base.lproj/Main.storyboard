@@ -278,13 +278,6 @@
                                 <rect key="frame" x="16" y="196" width="352" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5An-ek-6AW">
-                                <rect key="frame" x="303" y="167" width="65" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="07/28" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NE-tz-f1o">
                                 <rect key="frame" x="291" y="209" width="55" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -310,7 +303,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2jr-ft-Bvz">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jr-ft-Bvz">
                                 <rect key="frame" x="81" y="316" width="229" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.87450980389999999" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -455,7 +448,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course: SYST9210" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yx-Tt-SGs">
-                                                            <rect key="frame" x="8" y="33" width="138" height="22"/>
+                                                            <rect key="frame" x="8" y="33" width="252" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                                             <nil key="textColor"/>
@@ -501,6 +494,13 @@
                                     <outlet property="delegate" destination="Sde-SF-FKK" id="nHe-Ml-05d"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5An-ek-6AW">
+                                <rect key="frame" x="190" y="162" width="178" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KRM-Oq-nd5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -516,6 +516,8 @@
                         <outlet property="examBtn" destination="6Qy-uO-wyo" id="aRG-78-F9e"/>
                         <outlet property="exerciseBtn" destination="Ae0-Zq-6e1" id="AS5-5p-Qw0"/>
                         <outlet property="lblName" destination="LFg-5a-M9w" id="qe8-Gb-lLd"/>
+                        <outlet property="lblNumTasks" destination="5An-ek-6AW" id="ajh-Q5-OOf"/>
+                        <outlet property="lblTasktoComplete" destination="AK8-IJ-0lt" id="NpU-wL-8mp"/>
                         <outlet property="lblToday" destination="2NE-tz-f1o" id="Xn1-nU-hQ9"/>
                         <outlet property="progressView" destination="2jr-ft-Bvz" id="TYV-bR-9oq"/>
                         <outlet property="quizbtn" destination="hlN-rB-wDM" id="8Ox-zO-Fsd"/>

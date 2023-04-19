@@ -18,6 +18,8 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet var testbtn : UIButton!
     @IBOutlet var exerciseBtn : UIButton!
     @IBOutlet var examBtn : UIButton!
+    @IBOutlet var lblTasktoComplete : UILabel!
+    @IBOutlet var lblNumTasks : UILabel!
     
     
     
@@ -25,6 +27,7 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     
     var listData : Array<String> = []
     var firstName: String?
+    let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBAction func assignButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "createTaskSegue", sender: 0)
@@ -74,16 +77,17 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         
         // Format Table Cell View
         taskTableView.separatorStyle = .none
-        
-        
-        
-
         // Do any additional setup after loading the view.
+        lblTasktoComplete.text = "You have completed 0% of your tasks today!"
+        
+        lblNumTasks.text = "You have \(String(mainDelegate.tasks.count)) tasks"
+        
+    
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // how many cells in the table view
-        return listData.count
+        return mainDelegate.tasks.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -92,12 +96,35 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell = taskTableView.dequeueReusableCell(withIdentifier: "taskCell") as! TaskCell
-//        let rowNum = indexPath.row
-//        tableCell.textLabel?.text = listData[rowNum]
-        
+
+       
         let rowNum = indexPath.row
         
-        tableCell.lblTaskTitle.text = listData[rowNum]
+//        tableCell.lblTaskTitle.text = listData[rowNum]
+        tableCell.lblTaskTitle.text = mainDelegate.tasks[rowNum].name
+        tableCell.lblCourse.text = "Course: " + mainDelegate.tasks[rowNum].course!
+        
+        // Get days left
+        let daysLeft = mainDelegate.tasks[rowNum].dueDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy"
+        let date = dateFormatter.date(from: daysLeft!)
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day], from: Date(), to: date!)
+
+        let daysRemaining = components.day ?? 0
+        
+        
+        if daysRemaining < 1 {
+            tableCell.lblPriority.text = "Priority: High"
+            tableCell.lbldayRemaining.text = "Overdue"
+        } else if daysRemaining > 2 && daysRemaining < 3 {
+            tableCell.lblPriority.text = "Priority: Medium"
+            tableCell.lbldayRemaining.text = String(daysRemaining) + " left"
+        }else{
+            tableCell.lblPriority.text = "Priority: Low"
+            tableCell.lbldayRemaining.text = String(daysRemaining) + " left"
+        }
         
         tableCell.taskView.layer.cornerRadius = tableCell.taskView.frame.height / 4
         
