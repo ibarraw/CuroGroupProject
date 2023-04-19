@@ -40,12 +40,6 @@ class StartTimerViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         
-        //Round our buttons
-        roundedStartButton.layer.cornerRadius = roundedStartButton.frame.width / 2
-        roundedStartButton.layer.masksToBounds = true
-        
-        roundedCancelButton.layer.cornerRadius = roundedCancelButton.frame.width / 2
-        roundedCancelButton.layer.masksToBounds = true
     }
 //
 //    @IBAction func startButtonPressed(sender: Any){
