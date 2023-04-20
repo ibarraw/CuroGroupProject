@@ -2,7 +2,7 @@
 //  MoreInformationViewController.swift
 //  Curo
 //
-//  Created by  on 2023-04-06.
+//  Created by William Ibarra on 2023-04-06.
 //
 
 import UIKit

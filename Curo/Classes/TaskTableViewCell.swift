@@ -1,3 +1,10 @@
+
+//
+//  TaskTableViewCell.swift
+//  Curo
+//
+//  Created by William Ibarra on 2023-04-06.
+// A class to style tab 4 (table view)
 import UIKit
 import EventKit
 

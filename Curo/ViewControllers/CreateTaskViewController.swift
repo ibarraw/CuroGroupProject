@@ -2,7 +2,7 @@
 //  CreateTaskViewController.swift
 //  Curo
 //
-//  Created by Hajra Rizvi on 2023-04-06.
+//  Created by William Ibarra on 2023-04-06.
 //
 
 import UIKit
@@ -13,6 +13,7 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     let eventStore = EKEventStore()
     
+    //fields to add to our calendar event
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var dueDatePicker: UIDatePicker!
@@ -27,10 +28,13 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
     let taskTypes = ["Assignment", "Quiz", "Test", "In-class Exercise", "Exam"]
     var selectedButtonIndex: Int?
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        //some appearance changes for looks
         coursePicker.delegate = self
         coursePicker.dataSource = self
         coursePicker.backgroundColor = .white
@@ -53,11 +57,12 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
     }
     
-    // UIPickerViewDataSource
+    // single picker view wheel
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    //for the number of rows in the picker
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == coursePicker {
                 return courses.count
@@ -68,6 +73,7 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     // UIPickerViewDelegate
+    //the picker view title
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == coursePicker {
               return courses[row]
@@ -77,6 +83,7 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
           return nil
     }
     
+    //the behaviour of textfields when you select a pickerview value
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == coursePicker {
                 courseTextField.text = courses[row]
@@ -85,6 +92,7 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
             }
     }
     
+    //pickerview appearance modifications
     func createPickerToolbar() -> UIToolbar {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -103,6 +111,7 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
         return toolbar
     }
     
+    //close text fields when finished
     @objc func doneButtonTapped() {
         courseTextField.resignFirstResponder()
         typeTextField.resignFirstResponder()
@@ -115,7 +124,6 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
         guard let name = nameTextField.text, !name.isEmpty,
               let type = typeTextField.text,
               let course = courseTextField.text, !course.isEmpty,
-//              let courseHomepage = courseHomepageTextField.text,
               let comments = commentsTextField.text
         else {
             return
@@ -124,14 +132,15 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
             return
         }
         
-        let courseHomepage = "https://www.sheridancollege.ca/"
-        let task = Task(name: name, type: type, dueDate: dueDate, course: course, courseHomepage: courseHomepage, comments: comments)
+        let courseHomepage = "https://www.sheridancollege.ca/" //hard coded sheridan page
+        let task = Task(name: name, type: type, dueDate: dueDate, course: course, courseHomepage: courseHomepage, comments: comments) //the task to add to our calendar
         
         // Check calendar access
         let status = EKEventStore.authorizationStatus(for: .event)
+        
         switch status {
         case .authorized:
-            saveEvent(task: task)
+            saveEvent(task: task) //if successful
         case .denied, .restricted:
             print("Calendar access denied or restricted")
         case .notDetermined:
@@ -147,12 +156,13 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
     }
     
+    //save the task to our calendar
     func saveEvent(task: Task) {
         // Create event
         let event = EKEvent(eventStore: eventStore)
         event.title = task.name
         
-        // Combine the fields into one string
+        // Combine the fields into one string (calendar does not allow custom fields)
         let eventNotes = "\nCuroAppTask Notes:\n\nType: \(task.type)\nCourse: \(task.course)\nCourse Home: \(task.courseHomepage)\nComments: \(task.comments)"
         
         event.notes = eventNotes
@@ -178,7 +188,6 @@ class CreateTaskViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     // Dismiss the date picker when a date is selected
     @IBAction func dateChanged(_ sender: UIDatePicker) {
-        //model.date = datePicker.date
         self.dismiss(animated: true, completion: nil)
     }
     
