@@ -66,17 +66,32 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         let task = tasks[indexPath.row]
-        
-        // Open the event in the Calendar app at the start date
-        let interval = task.startDate.timeIntervalSinceReferenceDate
-        if let url = URL(string: "calshow:\(interval)") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+
+        // Extract the URL from the notes
+        var homepageURL: URL?
+        let noteComponents = task.notes!.components(separatedBy: "\n")
+        for component in noteComponents {
+            if component.hasPrefix("Course Home:") {
+                let homepageString = component.replacingOccurrences(of: "Course Home:", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+                homepageURL = URL(string: homepageString)
+                break
+            }
+        }
+
+        // Open the URL in a webview
+        if let url = homepageURL {
+            let webViewModel = WebViewModel()
+            let webViewController = WebViewController(viewModel: webViewModel, homepageURL: url)
+            navigationController?.pushViewController(webViewController, animated: true)
         } else {
-            print("Error creating URL")
+            print("Error: No URL found in notes")
         }
     }
+
+
+
 
 }
 
