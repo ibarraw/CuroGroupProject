@@ -22,6 +22,8 @@
 		34067FB329DFE49400EA7BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34067FB229DFE49400EA7BC9 /* Assets.xcassets */; };
 		34067FB529E10BB800EA7BC9 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34067FB429E10BB800EA7BC9 /* Task.swift */; };
 		34067FB729E147E100EA7BC9 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34067FB629E147E100EA7BC9 /* TaskTableViewCell.swift */; };
+		348AB1D329F0BEF40024FBFA /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348AB1D229F0BEF40024FBFA /* WebViewModel.swift */; };
+		348AB1D529F0BF400024FBFA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348AB1D429F0BF400024FBFA /* WebViewController.swift */; };
 		70EFDAB329EF2DB100FADA83 /* Progressbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAB229EF2DB100FADA83 /* Progressbg.png */; };
 		70EFDAB529EF3E0900FADA83 /* Progress Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAB429EF3E0900FADA83 /* Progress Bar.png */; };
 		70EFDABB29EF4BF500FADA83 /* Test.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EFDAB829EF4BF500FADA83 /* Test.png */; };
@@ -62,6 +64,8 @@
 		34067FB229DFE49400EA7BC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34067FB429E10BB800EA7BC9 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		34067FB629E147E100EA7BC9 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		348AB1D229F0BEF40024FBFA /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		348AB1D429F0BF400024FBFA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		70EFDAB229EF2DB100FADA83 /* Progressbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progressbg.png; sourceTree = "<group>"; };
 		70EFDAB429EF3E0900FADA83 /* Progress Bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Progress Bar.png"; sourceTree = "<group>"; };
 		70EFDAB829EF4BF500FADA83 /* Test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Test.png; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				70EFDAC229EF673500FADA83 /* TaskCell.swift */,
 				952F266129F07E8900B049C0 /* Data.swift */,
 				70EFDAD129F0929500FADA83 /* TimerData.swift */,
+				348AB1D229F0BEF40024FBFA /* WebViewModel.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				34067FAB29DFB79400EA7BC9 /* CreateTaskViewController.swift */,
 				34067FAD29DFB7A000EA7BC9 /* StartTimerViewController.swift */,
 				34067FB029DFB7BA00EA7BC9 /* TimerViewController.swift */,
+				348AB1D429F0BF400024FBFA /* WebViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -350,7 +356,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348AB1D529F0BF400024FBFA /* WebViewController.swift in Sources */,
 				34067FAA29DFB78000EA7BC9 /* MoreInformationViewController.swift in Sources */,
+				348AB1D329F0BEF40024FBFA /* WebViewModel.swift in Sources */,
 				34067FB129DFB7BA00EA7BC9 /* TimerViewController.swift in Sources */,
 				34067FB729E147E100EA7BC9 /* TaskTableViewCell.swift in Sources */,
 				34067FB529E10BB800EA7BC9 /* Task.swift in Sources */,
