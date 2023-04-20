@@ -1,3 +1,9 @@
+//
+//  Task.swift
+//  Curo
+//
+//  Created by William Ibarra on 2023-04-06.
+// A class to store user task fields to save to our calendar as an event
 import Foundation
 import UIKit
 
