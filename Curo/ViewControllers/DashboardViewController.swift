@@ -58,7 +58,7 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblName.text = firstName
+        
         
         //adding style to progressView
         var transform : CGAffineTransform = CGAffineTransform(scaleX: 1.2, y: 4.5)
