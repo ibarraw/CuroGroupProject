@@ -18,15 +18,8 @@ class StartTimerViewController: UIViewController, UITextFieldDelegate {
     
     var selectedTime: TimeInterval = 0.0
     
-//    var timerData : TimerData
-//
-//    func doTheUpdate(){
-//        let time = timePicker.countDownDuration
-//        let name = tfTaskName.text ?? ""
-//        let timerData = TimerData(selectTime: time, task: name)
-//    }
     
-    
+    // when start button is pressed send the selectedTime to TimerViewController
     @IBAction func buttonPressed(sender: Any){
         selectedTime = timePicker.countDownDuration
         performSegue(withIdentifier: "goTimerViewController", sender: self)
@@ -35,7 +28,6 @@ class StartTimerViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue:UIStoryboardSegue, sender: Any?){
         if segue.identifier == "goTimerViewController" {
             if let timeViewController = segue.destination as? TimerViewController {
-//                timeViewController.timerData = timerData
                 timeViewController.selectedTime = selectedTime
                 timeViewController.taskName = tfTaskName.text
             }
@@ -44,18 +36,8 @@ class StartTimerViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         // Do any additional setup after loading the view.
-        
     }
-//
-//    @IBAction func startButtonPressed(sender: Any){
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                guard let timerViewController = storyboard.instantiateViewController(withIdentifier: "TimerViewController") as? TimerViewController else { return }
-//                timerViewController.selectedDate = timePicker.date
-//                present(timerViewController, animated: true, completion: nil)
-//    }
     
  
     

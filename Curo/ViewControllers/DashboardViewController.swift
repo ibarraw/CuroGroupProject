@@ -20,15 +20,13 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet var examBtn : UIButton!
     @IBOutlet var lblTasktoComplete : UILabel!
     @IBOutlet var lblNumTasks : UILabel!
-    
-    
-    
     @IBOutlet weak var taskTableView: UITableView!
     
-    var listData : Array<String> = []
+    
     var firstName: String?
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    //Create tasks buttons are clicked they perform segue to create a new task with the corresponding type
     @IBAction func assignButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "createTaskSegue", sender: 0)
     }
@@ -62,13 +60,14 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         lblName.text = firstName
         
+        //adding style to progressView
         var transform : CGAffineTransform = CGAffineTransform(scaleX: 1.2, y: 4.5)
         progressView.transform = transform
         progressView.layer.cornerRadius = 6
         progressView.layer.masksToBounds = true
         
-        listData = ["Chapter1", "Chapter2", "Chapter3"]
         
+        // converts date into String
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd"
         let today = Date()
@@ -96,15 +95,14 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell = taskTableView.dequeueReusableCell(withIdentifier: "taskCell") as! TaskCell
-
-       
         let rowNum = indexPath.row
         
-//        tableCell.lblTaskTitle.text = listData[rowNum]
+        
+        //Adding data to tabel cell
         tableCell.lblTaskTitle.text = mainDelegate.tasks[rowNum].name
         tableCell.lblCourse.text = "Course: " + mainDelegate.tasks[rowNum].course!
         
-        // Get days left
+        // Get days left, takes date converts to string then to date type
         let daysLeft = mainDelegate.tasks[rowNum].dueDate
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM dd, yyyy"
@@ -113,7 +111,6 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         let components = calendar.dateComponents([.day], from: Date(), to: date!)
 
         let daysRemaining = components.day ?? 0
-        
         
         if daysRemaining < 1 {
             tableCell.lblPriority.text = "Priority: High"

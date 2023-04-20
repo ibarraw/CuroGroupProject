@@ -7,6 +7,7 @@
 
 import UIKit
 import UserNotifications
+import AVFoundation
 
 
 class TimerViewController: UIViewController {
@@ -25,6 +26,8 @@ class TimerViewController: UIViewController {
 
     var taskName: String?
     var timerData: TimerData?
+    // alarm sound
+    let systemSoundID : SystemSoundID = 1005
     
     @IBAction func pausedButtonTapped(sender: UIButton){
         if isPaused{
@@ -48,20 +51,22 @@ class TimerViewController: UIViewController {
         print("Cancel button pressed")
     }
     
+    // segue to StartTimeController
     @IBAction func unwindToStartTimerController(segue: UIStoryboardSegue){
         
     }
     
+    // Adding in the shape layers
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
     var timeLeft: TimeInterval = 60
     var endTime: Date?
     var timeLabel =  UILabel()
     var timer = Timer()
-    // here you create basic animation object to animate the strokeEnd
+    //  create basic animation object to animate the strokeEnd
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
     func drawBgShape() {
-        bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY - 130), radius:
+        bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY - 120), radius:
             120, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
         bgShapeLayer.strokeColor = UIColor.white.cgColor
         bgShapeLayer.fillColor = UIColor.clear.cgColor
@@ -69,7 +74,7 @@ class TimerViewController: UIViewController {
         view.layer.addSublayer(bgShapeLayer)
     }
     func drawTimeLeftShape() {
-        timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY - 130), radius:
+        timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY - 120), radius:
             120, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
         timeLeftShapeLayer.strokeColor = UIColor.yellow.cgColor
         timeLeftShapeLayer.fillColor = UIColor.clear.cgColor
@@ -77,7 +82,7 @@ class TimerViewController: UIViewController {
         view.layer.addSublayer(timeLeftShapeLayer)
     }
     func addTimeLabel() {
-        timeLabel = UILabel(frame: CGRect(x: view.frame.midX-50 ,y: view.frame.midY - 180, width: 100, height: 50))
+        timeLabel = UILabel(frame: CGRect(x: view.frame.midX-50 ,y: view.frame.midY - 160, width: 100, height: 50))
         timeLabel.textAlignment = .center
         timeLabel.text = formattedTimeString(timeInterval: selectedTime)
         timeLabel.font = timeLabel.font.withSize(30)
@@ -85,7 +90,7 @@ class TimerViewController: UIViewController {
     }
     
 
-    
+    // formatting the time into string
     private func formattedTimeString(timeInterval: TimeInterval) -> String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute, .second]
@@ -93,6 +98,8 @@ class TimerViewController: UIViewController {
         return formatter.string(from: timeInterval)!
     }
     
+    
+    // Asks the user if push notifications are allowed or not
     func checkForPermission(){
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.getNotificationSettings{ settings in
@@ -113,6 +120,7 @@ class TimerViewController: UIViewController {
         }
     }
     
+    // displays the notification
     func dispatchNotification(){
         let identifier = "Timer Notification"
         let title = "Time is Up!"
@@ -137,10 +145,13 @@ class TimerViewController: UIViewController {
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
         notificationCenter.add(request)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkForPermission()
 
+        
         taskNameLabel.text = taskName
     
         view.backgroundColor = UIColor(white: 0.94, alpha: 1.0)
@@ -164,6 +175,7 @@ class TimerViewController: UIViewController {
         
         }
     
+    //updates the time label
     @objc func updateTime() {
     if timeLeft > 0 {
         timeLeft = endTime?.timeIntervalSinceNow ?? 0
@@ -172,6 +184,7 @@ class TimerViewController: UIViewController {
         } else {
         timeLabel.text = "00:00"
         timer.invalidate()
+            AudioServicesPlaySystemSound(systemSoundID)
         }
     }
 }
