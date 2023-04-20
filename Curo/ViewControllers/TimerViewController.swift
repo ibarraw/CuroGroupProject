@@ -65,6 +65,8 @@ class TimerViewController: UIViewController {
     var timer = Timer()
     //  create basic animation object to animate the strokeEnd
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
+    
+    //Outer shape
     func drawBgShape() {
         bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY - 120), radius:
             120, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
@@ -73,6 +75,8 @@ class TimerViewController: UIViewController {
         bgShapeLayer.lineWidth = 15
         view.layer.addSublayer(bgShapeLayer)
     }
+    
+    //Overlined shape
     func drawTimeLeftShape() {
         timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY - 120), radius:
             120, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
@@ -81,6 +85,8 @@ class TimerViewController: UIViewController {
         timeLeftShapeLayer.lineWidth = 15
         view.layer.addSublayer(timeLeftShapeLayer)
     }
+    
+    //Time label
     func addTimeLabel() {
         timeLabel = UILabel(frame: CGRect(x: view.frame.midX-50 ,y: view.frame.midY - 160, width: 100, height: 50))
         timeLabel.textAlignment = .center
@@ -150,7 +156,6 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkForPermission()
-
         
         taskNameLabel.text = taskName
     
@@ -158,15 +163,19 @@ class TimerViewController: UIViewController {
         drawBgShape()
         drawTimeLeftShape()
         addTimeLabel()
+        
         //  define the fromValue, toValue and duration of your animation
         strokeIt.fromValue = 0
         strokeIt.toValue = 1
         strokeIt.duration = 60
+        
         // add the animation to timeLeftShapeLayer
         timeLeftShapeLayer.add(strokeIt, forKey: nil)
         // define the future end time by adding the timeLeft to now Date()
         endTime = Date().addingTimeInterval(selectedTime)
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        
+        //push notification
         notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if let error = error {
                 print("Error requesting authorization for push notifications: \(error.localizedDescription)")

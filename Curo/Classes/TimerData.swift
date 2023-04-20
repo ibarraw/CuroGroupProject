@@ -2,7 +2,7 @@
 //  TimerData.swift
 //  Curo
 //
-//  Created by  on 2023-04-19.
+//  Created by Hajra Rizvi on 2023-04-19.
 //
 
 import Foundation
