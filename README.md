@@ -9,7 +9,7 @@ The application creates reminders, triggers notifications, and employs authentic
 ## Project Status
 This project is no longer supported or maintained. 
 
-## Installation instructions
+## Installation 
 1. Download project
 2. Install Cocoa Pods
 3. Build and run project on iPhone 13 Pro  
