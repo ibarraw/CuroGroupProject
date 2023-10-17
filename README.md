@@ -52,7 +52,7 @@ Build and run Project on iPhone 13 Pro
 ## Technologies Used 
 ### CocoaPods  
 CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects and provides a centralized way for developers to manager external libraries called "pods". 
-CocoaPods was employed in this project to enable the user to sign up to use our application and provide authentication services powered by Firebase. 
+CocoaPods was employed in this project to install external libraries and modules. 
 
 ### EventKit 
 EventKit is a framework provided by Apple for use in its iOS and macOS SDKs. 
