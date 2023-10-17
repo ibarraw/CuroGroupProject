@@ -1,7 +1,16 @@
 # Curo
-Group iOS project
+## Authors and Acknowledgement: 
+John Ho, William Ibarra, Hajra Rizvi 
 
-Install Cocoa Pods
+## Description
+Curo is a mobile iOS application designed to keep track of assignments, tasks and deadlines. 
+The application creates reminders, triggers notifications, and employs authentication to ensure privacy and security. 
+
+## Installation instructions
+1. Download project
+2. Install Cocoa Pods  
+
+## Installing Cocoa Pods
 1. Navigate to project root and open terminal
 2. run: pod init
 3. open newly created Podfile in text editor
@@ -40,3 +49,24 @@ Build and run Project on iPhone 13 Pro
 2. Open Curo.xcworkspace
 3. Build and Run
 
+## Technologies Used 
+### CocoaPods  
+CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects and provides a centralized way for developers to manager external libraries called "pods". 
+CocoaPods was employed in this project to enable the user to sign up to use our application and provide authentication services powered by Firebase. 
+
+### EventKit 
+EventKit is a framework provided by Apple for use in its iOS and macOS SDKs. 
+This development allows applications to manipulate calendar events and reminders. 
+The kit enabled the application to create, retrieve, edit and delete calendar events. 
+
+### Firebase Google Authentication 
+Firebase Authentication is a service provided by Firebase, a platform owned by Google. 
+It enables developers to authenticate users without the need to implement their own authentication systems. 
+This includes creation and storage of credentials. 
+
+### SQLite3 
+A software library that provides a relational database management system. 
+It's an embedded, serverless and self-contained database used within our application to store details regarding assignments, tasks and deadlines. 
+
+## Project Status
+This project is no longer supported or maintained. 
