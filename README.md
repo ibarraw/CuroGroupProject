@@ -6,6 +6,9 @@ John Ho, William Ibarra, Hajra Rizvi
 Curo is a mobile iOS application designed to keep track of assignments, tasks and deadlines. 
 The application creates reminders, triggers notifications, and employs authentication to ensure privacy and security. 
 
+## Project Status
+This project is no longer supported or maintained. 
+
 ## Installation instructions
 1. Download project
 2. Install Cocoa Pods  
@@ -67,6 +70,3 @@ This includes creation and storage of credentials.
 ### SQLite3 
 A software library that provides a relational database management system. 
 It's an embedded, serverless and self-contained database used within our application to store details regarding assignments, tasks and deadlines. 
-
-## Project Status
-This project is no longer supported or maintained. 
