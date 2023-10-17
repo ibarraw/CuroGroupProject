@@ -1,5 +1,5 @@
 # Curo
-## Authors and Acknowledgement: 
+## Authors and Acknowledgement 
 John Ho, William Ibarra, Hajra Rizvi 
 
 ## Description
