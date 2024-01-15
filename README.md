@@ -2,6 +2,8 @@
 ## Authors and Acknowledgement 
 John Ho, William Ibarra, Hajra Rizvi 
 
+![PROG31632_iOS_Project_Proposal](https://github.com/ibarraw/CuroGroupProject/assets/84588576/f6a48ea3-91c9-45a3-b543-7d1183f23a2c)
+
 ## Description
 Curo is a mobile iOS application designed to keep track of assignments, tasks and deadlines. 
 The application creates reminders, triggers notifications, and employs authentication to ensure privacy and security. 
